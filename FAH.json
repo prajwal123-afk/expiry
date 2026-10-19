@@ -1,1 +1,70 @@
-[{"remarks":"JITUNew3","dns":{"servers":["1.1.1.1","8.8.8.8"]},"inbounds":[{"tag":"socks","port":10808,"listen":"127.0.0.1","protocol":"socks","sniffing":{"enabled":true,"destOverride":["http","tls","quic"],"routeOnly":false},"settings":{"auth":"noauth","udp":true}}],"outbounds":[{"tag":"proxy","protocol":"vless","settings":{"vnext":[{"address":"200.234.35.115","port":44300,"users":[{"id":"24fdf4f7-f019-4662-9a72-32d13b94c98f","encryption":"none","level":0}]}]},"streamSettings":{"network":"tcp","security":"reality","realitySettings":{"show":false,"fingerprint":"chrome","serverName":"www.google.com","publicKey":"0oFZX3Oz7QoLOVXFHAGwnuKNb35HbTvUQSspKYYwNDA","shortId":"ab12cd34","spiderX":""}}},{"tag":"direct","protocol":"freedom"},{"tag":"block","protocol":"blackhole"}]}]
+[
+  {
+    "remarks": "JITUHERE",
+    "dns": {
+      "servers": ["1.1.1.1", "8.8.8.8"]
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "sniffing": {
+          "enabled": true,
+          "destOverride": ["http", "tls", "quic"],
+          "routeOnly": false
+        },
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "200.234.35.115",
+              "port": 44300,
+              "users": [
+                {
+                  "id": "24fdf4f7-f019-4662-9a72-32d13b94c98f",
+                  "encryption": "none",
+                  "level": 0
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "show": false,
+            "fingerprint": "chrome",
+            "serverName": "www.google.com",
+            "publicKey": "0oFZX3Oz7QoLOVXFHAGwnuKNb35HbTvUQSspKYYwNDA",
+            "shortId": "ab12cd34",
+            "spiderX": ""
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom"
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": []
+    }
+  }
+]
