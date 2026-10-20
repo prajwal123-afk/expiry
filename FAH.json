@@ -48,9 +48,7 @@
   ],
   "log": {
     "dnsLog": true,
-    "loglevel": "debug",
-    "access": "/data/user/0/com.happproxy/files/logs/access/access_log.txt",
-    "error": "/data/user/0/com.happproxy/files/logs/error/1792406135642_error_log.txt"
+    "loglevel": "warning"
   },
   "outbounds": [
     {
