@@ -103,7 +103,7 @@
       "statsOutboundDownlink": true
     }
   },
-  "remarks": "NIPEX_LAG",
+  "remarks": "JITUV2",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
