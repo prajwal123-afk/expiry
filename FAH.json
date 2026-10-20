@@ -46,10 +46,6 @@
       "tag": "socks"
     }
   ],
-  "log": {
-    "dnsLog": true,
-    "loglevel": "warning"
-  },
   "outbounds": [
     {
       "mux": {
@@ -107,7 +103,7 @@
       "statsOutboundDownlink": true
     }
   },
-  "remarks": "JITUFAH",
+  "remarks": "NIPEX_LAG",
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
