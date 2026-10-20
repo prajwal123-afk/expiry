@@ -1,70 +1,144 @@
-[
-  {
-    "remarks": "JITUHERE",
-    "dns": {
-      "servers": ["1.1.1.1", "8.8.8.8"]
+{
+  "api": {
+    "listen": "[::1]:10085",
+    "services": [
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
     },
-    "inbounds": [
+    "queryStrategy": "UseIP",
+    "servers": [
+      "1.1.1.1",
       {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "sniffing": {
-          "enabled": true,
-          "destOverride": ["http", "tls", "quic"],
-          "routeOnly": false
-        },
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "200.234.35.115",
-              "port": 44300,
-              "users": [
-                {
-                  "id": "24fdf4f7-f019-4662-9a72-32d13b94c98f",
-                  "encryption": "none",
-                  "level": 0
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "show": false,
-            "fingerprint": "chrome",
-            "serverName": "www.google.com",
-            "publicKey": "0oFZX3Oz7QoLOVXFHAGwnuKNb35HbTvUQSspKYYwNDA",
-            "shortId": "ab12cd34",
-            "spiderX": ""
-          }
-        }
+        "address": "1.1.1.1",
+        "domains": [],
+        "port": 53
       },
       {
-        "tag": "direct",
-        "protocol": "freedom"
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
+        "address": "8.8.8.8",
+        "domains": [],
+        "port": 53
       }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": []
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true
+      },
+      "tag": "socks"
     }
-  }
-]
+  ],
+  "log": {
+    "dnsLog": true,
+    "loglevel": "debug",
+    "access": "/data/user/0/com.happproxy/files/logs/access/access_log.txt",
+    "error": "/data/user/0/com.happproxy/files/logs/error/1792406135642_error_log.txt"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "hysteria",
+      "settings": {
+        "address": "wraith2.zentnityx.store",
+        "level": 8,
+        "port": 443,
+        "security": "auto",
+        "version": 2
+      },
+      "streamSettings": {
+        "finalmask": {},
+        "hysteriaSettings": {
+          "auth": "ZNTX-5817-8728-25CA.1792398966.42f96f374db2dba89294f47d46185014",
+          "version": 2
+        },
+        "network": "hysteria",
+        "security": "tls",
+        "tlsSettings": {
+          "alpn": [
+            "h3"
+          ],
+          "serverName": "wraith2.zentnityx.store",
+          "show": false
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "remarks": "NIPEX_LAG",
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "proxy",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      },
+      {
+        "ip": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "169.254.0.0/16",
+          "224.0.0.0/4",
+          "255.255.255.255"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  },
+  "stats": {}
+}
