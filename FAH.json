@@ -1,5 +1,5 @@
 {
-  "remarks": "JITU-TEST",
+  "remarks": "Phantom-F4D9",
   "inbounds": [
     {
       "tag": "socks",
@@ -41,7 +41,7 @@
       "tag": "proxy",
       "protocol": "hysteria",
       "settings": {
-        "address": "proxy-bd.dripwire.cc",
+        "address": "wraith-bom3.ph4nt0m.lol",
         "port": 443,
         "version": 2
       },
@@ -49,20 +49,14 @@
         "network": "hysteria",
         "security": "tls",
         "tlsSettings": {
-          "serverName": "proxy-bd.dripwire.cc",
+          "serverName": "wraith-bom3.ph4nt0m.lol",
           "alpn": [
             "h3"
-          ],
-          "show": false
+          ]
         },
         "hysteriaSettings": {
           "version": 2,
-          "auth": "5989906323"
-        },
-        "finalmask": {
-          "quicParams": {
-            "disableChromeParrot": true
-          }
+          "auth": "PHTM-A103-9BB5-F4D9.1792951827.c697f8f88db779f23426c549600ef0e7"
         }
       }
     },
