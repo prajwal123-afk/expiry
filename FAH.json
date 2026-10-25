@@ -1,5 +1,5 @@
 {
-  "remarks": "Xreg-33E9",
+  "remarks": "JITU-TEST",
   "inbounds": [
     {
       "tag": "socks",
@@ -41,7 +41,7 @@
       "tag": "proxy",
       "protocol": "hysteria",
       "settings": {
-        "address": "wraith2.xreg.site",
+        "address": "proxy-bd.dripwire.cc",
         "port": 443,
         "version": 2
       },
@@ -49,14 +49,20 @@
         "network": "hysteria",
         "security": "tls",
         "tlsSettings": {
-          "serverName": "wraith2.xreg.site",
+          "serverName": "proxy-bd.dripwire.cc",
           "alpn": [
             "h3"
-          ]
+          ],
+          "show": false
         },
         "hysteriaSettings": {
           "version": 2,
-          "auth": "XREG-0CDA-C587-33E9.1792917314.f39cce46f8f49d61e71d0a56f691a156"
+          "auth": "5989906323"
+        },
+        "finalmask": {
+          "quicParams": {
+            "disableChromeParrot": true
+          }
         }
       }
     },
