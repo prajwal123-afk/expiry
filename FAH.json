@@ -1,5 +1,5 @@
 {
-  "remarks": "JITU NEWWORLD V 1.2",
+  "remarks": "Xreg-33E9",
   "inbounds": [
     {
       "tag": "socks",
@@ -41,7 +41,7 @@
       "tag": "proxy",
       "protocol": "hysteria",
       "settings": {
-        "address": "wraith-bom3.ph4nt0m.lol",
+        "address": "wraith2.xreg.site",
         "port": 443,
         "version": 2
       },
@@ -49,14 +49,14 @@
         "network": "hysteria",
         "security": "tls",
         "tlsSettings": {
-          "serverName": "wraith-bom3.ph4nt0m.lol",
+          "serverName": "wraith2.xreg.site",
           "alpn": [
             "h3"
           ]
         },
         "hysteriaSettings": {
           "version": 2,
-          "auth": "PHTM-A103-9BB5-F4D9.1792913809.64a4c4d0a9e40775010340f7c8334a4e"
+          "auth": "XREG-0CDA-C587-33E9.1792917314.f39cce46f8f49d61e71d0a56f691a156"
         }
       }
     },
