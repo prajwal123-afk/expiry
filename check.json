@@ -1,4 +1,16 @@
 {
-  "id": 1,
-  "telegran":https://t.me/gutx1
+  "hide-settings": 1,
+  "per-app-proxy-mode": "on",
+  "per-app-proxy-list": [
+    "com.garena.game.ffi",
+    "com.dts.freefiremax"
+  ],
+  "proxy": {
+    "type": "socks5",
+    "server": "asiarezzx.toulouse-digital31.fr",
+    "port": 8443,
+    "username": "c7b687aa8928f4c8e736b0aae7ae223a",
+    "password": "***",
+    "name": "PC5 - India · AIMBOT"
+  }
 }
