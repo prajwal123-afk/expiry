@@ -1,16 +1,72 @@
 {
-  "hide-settings": 1,
-  "per-app-proxy-mode": "on",
-  "per-app-proxy-list": [
-    "com.garena.game.ffi",
-    "com.dts.freefiremax"
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "socks-in",
+      "protocol": "socks",
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      },
+      "sniffing": {
+        "enabled": false
+      }
+    }
   ],
-  "proxy": {
-    "type": "socks5",
-    "server": "asiarezzx.toulouse-digital31.fr",
-    "port": 8443,
-    "username": "e7fcaf47ce079c960bf7469d4593c1c4",
-    "password": "v1.498557.682b8168.2e8cb830bf16c5c4ac808cc0",
-    "name": "PC5 - India · AIMBOT"
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "asiarezzx.toulouse-digital31.fr",
+            "port": 8443,
+            "users": [
+              {
+                "user": "c7d51506049d02440c534ef1609f9c39",
+                "pass": "v1.498559.682b8168.dbaee5a1e5fa16d6ee954e1d"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "network": "tcp",
+        "port": "0-7005,7007-39599,39901-65535",
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "udp",
+        "port": "0-10009,10021-65535",
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "proxy"
+      }
+    ]
   }
 }
