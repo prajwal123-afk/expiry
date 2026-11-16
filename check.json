@@ -24,12 +24,12 @@
       "settings": {
         "servers": [
           {
-            "address": "asiarezzx.toulouse-digital31.fr",
+            "address": "bytesx.toulouse-digital31.fr",
             "port": 8443,
             "users": [
               {
-                "user": "c7d51506049d02440c534ef1609f9c39",
-                "pass": "v1.498559.682b8168.dbaee5a1e5fa16d6ee954e1d"
+                "user": "cb191b442e5988b180361a096a1ec733",
+                "pass": "v1.498562.682b8168.2571aa37f3de97e6ef79a5a1"
               }
             ]
           }
